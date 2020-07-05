@@ -1,0 +1,4 @@
+- name: Install php
+  yum:
+    name: "{{ php_rpm_list }}"
+    state: present

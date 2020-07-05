@@ -1,0 +1,5 @@
+- name: Create Rsync Password file
+  copy:
+    content: "{{ rsync_user }}:{{ rsync_pass }}"
+    dest: /etc/rsync.passwd
+    mode: 0600

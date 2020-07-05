@@ -1,0 +1,14 @@
+---
+# vars file for lb
+nginx_config_file:
+  - { src: proxy_params , dest: /etc/nginx/ }
+  - { src: server.crt , dest: /etc/nginx/ssl/server.crt }
+  - { src: server.key , dest: /etc/nginx/ssl/server.key }
+
+lb_config:
+  - { src: nginx.conf , dest: /etc/nginx/ }
+  - { src: upstream.conf , dest: /etc/nginx/conf.d/ }
+
+str_www: www
+wp: wp.gong.com
+zh: zh.gong.com

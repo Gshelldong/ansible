@@ -1,0 +1,20 @@
+- name: Send scripts to db01 and db02
+  copy:
+    src: db_backup_sql.sh
+    dest: /root/
+    mode: 0755
+  when: ansible_fqdn == "db01" or ansible_fqdn == "db02"
+
+- name: Send scripts to backup
+  copy:
+    src: rm_backup.sh
+    dest: /root/
+    mode: 0755
+  when: ansible_fqdn == "backup"
+
+- name: Send scripts to db_manager
+  copy:
+    src: cron_backup_sql.sh
+    dest: /root/
+    mode: 0755
+  when: ansible_fqdn == "db03"

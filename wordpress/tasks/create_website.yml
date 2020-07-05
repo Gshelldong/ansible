@@ -1,0 +1,6 @@
+- name: create website directory
+  file:
+    path: /website
+    owner: "{{ str_www }}"
+    group: "{{ str_www }}"
+    state: directory

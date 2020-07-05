@@ -1,0 +1,11 @@
+  # 在初始的时候就设置了数据库的root密码,因为依耐的关系会被执行两次。
+- name: Mariadb set root password
+  mysql_user:
+    name: root
+    password: "123"
+    update_password: always
+    host: "localhost"
+    priv: "*.*:ALL,GRANT"
+    state: present
+  ignore_errors: yes
+# host是*的时候无法更改root的密码。

@@ -1,0 +1,19 @@
+- name: send backup data
+  copy:
+    src: all_database_backup.sql
+    dest: /tmp/all_database_backup.sql
+
+- name: import database
+  mysql_db:
+    state: import
+    name: all
+    target: /tmp/all_database_backup.sql
+  # 在使用其它步骤的时候有，依耐就会导入数据，但是实在root重置之后了，数据还在，无法使用默认认证方式
+  # 导入，忽略错误
+  ignore_errors: yes
+  # notify: Restart Mariadb
+
+- name: restart mariadb
+  service:
+    name: mariadb
+    state: restarted

@@ -1,0 +1,22 @@
+---
+# vars file for wordpress
+str_www: www
+wp: wp.gong.com
+zh: zh.gong.com
+
+file_name:
+  - { src: nginx.conf , dest: /etc/nginx/}
+  - { src: wp_gong_com.conf , dest: /etc/nginx/conf.d/}
+  - { src: zh_gong_com.conf , dest: /etc/nginx/conf.d/}
+
+uploads_dire:
+  - /website/wp/wp-content/uploads
+  - /website/zh/uploads
+
+mounted:
+  - { path: "/website/wp/wp-content/uploads",src: "172.16.1.31:/data/wp_data" }
+  - { path: "/website/zh/uploads",src: "172.16.1.31:/data/zh_data" }
+
+code_zip:
+  - wp.tar.gz
+  - zh.tar.gz

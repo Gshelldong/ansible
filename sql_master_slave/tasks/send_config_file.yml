@@ -1,0 +1,10 @@
+- name: send mariadb config file
+  template:
+    src: my.cnf
+    dest: /etc/
+  # notify: Restart mariadb
+
+- name: Restart Mariadb-Mster
+  service:
+    name: mariadb
+    state: restarted

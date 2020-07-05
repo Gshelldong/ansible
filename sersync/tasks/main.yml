@@ -1,0 +1,8 @@
+---
+# tasks file for sersync
+- include: install_srrsync.yml
+- include: send_config_file.yml
+- include: create_auth_pas.yml
+- include: start_sersync.yml
+
+

@@ -1,0 +1,14 @@
+- name: Send config file
+  copy:
+    src: server.xml
+    dest: /etc/tomcat/
+
+- name: unarchive code
+  unarchive:
+    src: jpress-v3.2.5.tar.gz
+    dest: /var/lib/tomcat/webapps/
+    owner: tomcat
+    group: tomcat
+  # 解压覆盖的时候，不能把共享存储挂载的文件目录，属主信息给覆盖掉，但是文件内容，可以正常使用
+  # 所以忽略了报错，解决权限问题是把tomcat 加入www组
+  ignore_errors: yes

@@ -1,0 +1,4 @@
+---
+# handlers file for sersync
+- name: Sersync
+  shell: /usr/local/GNU-Linux-x86/sersync2 -rdo /usr/local/GNU-Linux-x86/confxml.xml

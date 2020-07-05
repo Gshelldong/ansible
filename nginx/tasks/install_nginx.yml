@@ -1,0 +1,4 @@
+- name: install nginx
+  yum:
+    name: /tmp/{{ pkg_name }}
+    state: present

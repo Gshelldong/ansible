@@ -1,0 +1,7 @@
+- name: Start slave
+  mysql_replication:
+    login_user: root
+    login_password: '123'
+    mode: startslave
+  when: ansible_fqdn != "db01"
+

@@ -1,0 +1,5 @@
+---
+# tasks file for keepalived
+- include: install_keepalived.yml
+- include: send_check.yml
+- include: start_keepalived.yml

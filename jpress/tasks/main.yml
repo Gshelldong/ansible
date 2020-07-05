@@ -1,0 +1,8 @@
+---
+# tasks file for jpress
+- include: send_tomcat_rpm.yml
+- include: install_tomcat.yml
+- include: change_user.yml
+- include: mount_attachment.yml
+- include: send_confg.yml
+- include: started_tomcat.yml

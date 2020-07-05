@@ -1,0 +1,33 @@
+- hosts: all
+  roles:
+    - { role: ntp , when: ansible_fqdn == "m01"}
+      # 所有主机都要进行基础包的安装
+    - { role: base }
+    - { role: rsync , when: ansible_fqdn == "backup" }
+    - { role: nfs , when: ansible_fqdn == "nfs01" }
+       # 调试了sersync的启动过程，shell无法启动的问题
+    - { role: sersync , when: ansible_fqdn == "nfs01" }
+    - { role: mariadb , when: ansible_fqdn is match "db*" }
+    - { role: MHA , when: ansible_fqdn is match "db*" }
+    - { role: nginx , when: ansible_fqdn is match "web*" or ansible_fqdn == "lb*"}
+    - { role: php , when: ansible_fqdn is match "web*" }
+
+    - { role: import_blog_data , when: ansible_fqdn is match "db01" }
+    - { role: wordpress , when: ansible_fqdn is match "web*" }
+
+    - { role: lb , when: ansible_fqdn is match "lb*" }
+
+    - { role: keepalived , when: ansible_fqdn is match "lb*" }
+       # 主从复制，在有Mha之后这个只做调试用
+       #- { role: sql_master_slave , when: ansible_fqdn is match "db*" }
+       # 导入jb的数据库之后再运行jpress的部署
+    - { role: import_jb_database , when: ansible_fqdn is match "db*" }
+    - { role: jpress , when: ansible_fqdn is match "web*" }
+
+      # nginx 的本地缓存,同时把jpress的负载均衡和高可用也做了。
+    - { role: nginx_cache , when: ansible_fqdn is match "lb*" }
+      #  在安装之前先把zabbix的数据库导入，单独写减少判断，没有写依耐
+    - { role: import_zabbix_data , when: ansible_fqdn is match "db01" }
+    - { role: zabbix }
+        # 备份的定时任务,在里面做了条件判断
+    - { role: whole_backup }

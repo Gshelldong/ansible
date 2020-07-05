@@ -1,0 +1,9 @@
+- name: unarchive code
+  unarchive:
+    src: "{{ item }}"
+    dest: /website/
+    owner: "{{ str_www }}"
+    group: "{{ str_www }}"
+  loop: "{{ code_zip }}"
+  notify: Restart nginx_php Server
+  ignore_errors: yes

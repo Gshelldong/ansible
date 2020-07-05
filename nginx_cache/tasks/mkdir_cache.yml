@@ -1,0 +1,11 @@
+- name: Create cache directory
+  file:
+    path: "{{ item }}"
+    owner: www
+    group: www
+    mode: 0755
+    recurse: yes
+  with_items:
+    - /data/wp_cache
+    - /data/jp_cache
+    - /data/zh_cache

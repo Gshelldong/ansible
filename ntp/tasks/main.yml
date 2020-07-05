@@ -1,0 +1,5 @@
+---
+# tasks file for ntp
+- include: install_ntp.yml
+- include: send_config.yml
+- include: start_ntpd.yml

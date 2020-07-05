@@ -1,0 +1,15 @@
+- name: Backup db_master crontab
+  cron:
+    name: "Backup Crontab"
+    minute: "00"
+    hour: "01"
+    job: "/bin/bash /root/cron_backup_sql.sh &>/dev/null"
+  when: ansible_fqdn == "db03"
+
+- name: Clear backup directory
+  cron:
+    name: "Clear backup directory"
+    minute: "00"
+    hour: "01"
+    job: "/bin/bash /root/rm_backup.sh &>/dev/null"
+  when: ansible_fqdn == "backup"

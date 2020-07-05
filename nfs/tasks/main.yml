@@ -1,0 +1,7 @@
+---
+# tasks file for nfs
+- include: install_nfs.yml
+- include: change_confile.yml
+- include: create_datafile.yml
+- include: start_nfsserver.yml
+

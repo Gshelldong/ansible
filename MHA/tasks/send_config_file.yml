@@ -1,0 +1,12 @@
+    # 发送主从复制的配置文件，其中包括了跳过反向解析，默认utf-8
+- name: send mariadb config file
+  template:
+    src: my.cnf
+    dest: /etc/
+  # notify: Restart mariadb
+
+  # 初始设置的root密码，在这次重启之后就生效了，后面都要认证。
+- name: Restart Mariadb-Mster
+  service:
+    name: mariadb
+    state: restarted

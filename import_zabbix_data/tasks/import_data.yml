@@ -1,0 +1,12 @@
+- name: Send zabbix default database
+  copy:
+    src: create.sql
+    dest: /opt/
+
+- name: import zabbix databases
+  mysql_db:
+    login_user: root
+    login_password: "123"
+    state: import
+    name: zabbix
+    target: /opt/create.sql

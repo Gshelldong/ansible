@@ -1,0 +1,7 @@
+- name: create backup dire
+  file:
+    path: /{{ mode_dir }}
+    owner: "{{ user_group }}"
+    group: "{{ user_group }}"
+    mode: 0755
+    state: directory

@@ -1,0 +1,9 @@
+- name: Create database user zabbix
+  mysql_user:
+    login_user: root
+    login_password: "123"
+    name: zabbix
+    password: "123"
+    host: "%"
+    priv: 'zabbix.*:ALL'
+    state: present

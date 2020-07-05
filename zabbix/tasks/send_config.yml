@@ -1,0 +1,13 @@
+- name: Send zabbix Server config file
+  copy:
+    src: "{{ item.src }}"
+    dest: "{{ item.dest }}"
+  loop: "{{ zabbix_config_file }}"
+  when: ansible_fqdn == "zabbix"
+
+- name: Send config file zabbix Agent
+  template:
+    src: zabbix_agentd.conf
+    dest: /etc/zabbix/
+  # 服务器不更改原始的配置文件
+  when: ansible_fqdn != "zabbix"

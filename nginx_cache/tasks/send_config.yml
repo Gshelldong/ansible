@@ -1,0 +1,4 @@
+- name: send nginx local cache config file
+  copy:
+    src: upstream.conf
+    dest: /etc/nginx/conf.d/

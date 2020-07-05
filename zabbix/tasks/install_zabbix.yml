@@ -1,0 +1,6 @@
+- name: Install zabbix
+  yum:
+    # 安装的时候使用变量的方式，不会输出循环的细节安装
+    name: "{{ zabbix_pkg }}"
+    state: present
+  when: ansible_fqdn == "zabbix"

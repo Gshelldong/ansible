@@ -1,0 +1,3 @@
+---
+# vars file for nginx
+pkg_name: "nginx-1.18.0-1.el7.ngx.x86_64.rpm"

@@ -1,0 +1,7 @@
+---
+# tasks file for rsync
+- include: install_rsync.yml
+- include: config_rsync.yml
+- include: create_backup.yml
+- include: create_file_pas.yml
+- include: start_rsync.yml

@@ -1,0 +1,4 @@
+- name: Send tomcat rpm packags
+  unarchive:
+    src: yum_tomcat.tar.gz
+    dest: /opt/

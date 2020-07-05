@@ -1,0 +1,7 @@
+- name: Send mha rpm packages
+  copy:
+    src: "{{ item }}"
+    dest: /opt/
+  with_items:
+    - mha4mysql-manager-0.56-0.el6.noarch.rpm
+    - mha4mysql-node-0.56-0.el6.noarch.rpm

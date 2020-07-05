@@ -1,0 +1,5 @@
+- name: start rsyncd
+  service:
+    name: rsyncd
+    state: started
+    enabled: true

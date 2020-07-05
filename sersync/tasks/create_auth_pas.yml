@@ -1,0 +1,5 @@
+ - name: create auth pas file
+   copy:
+     content: "{{ auth_password }}"
+     dest: /etc/rsync.passwd
+     mode: 0600

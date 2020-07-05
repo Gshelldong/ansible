@@ -1,0 +1,4 @@
+- name: started firewalld
+  service:
+    name: firewalld
+    state: started

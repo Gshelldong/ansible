@@ -1,0 +1,6 @@
+---
+# handlers file for sql_master_slave
+- name: Restart mariadb
+  service:
+    name: mariadb
+    state: restarted

@@ -1,0 +1,7 @@
+- name: config rsyncd
+  template:
+    src: rsyncd.conf.j2
+    dest: /etc/rsyncd.conf
+
+
+

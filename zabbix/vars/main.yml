@@ -1,0 +1,47 @@
+---
+# vars file for zabbix
+zabbix_pkg:
+  - /opt/dejavu-fonts-common-2.33-6.el7.noarch.rpm
+  - /opt/dejavu-sans-fonts-2.33-6.el7.noarch.rpm
+  - /opt/fontpackages-filesystem-1.44-8.el7.noarch.rpm
+  - /opt/fping-3.10-4.el7.x86_64.rpm
+  - /opt/gnutls-3.3.29-9.el7_6.x86_64.rpm
+  - /opt/httpd-2.4.6-93.el7.centos.x86_64.rpm
+  - /opt/httpd-tools-2.4.6-93.el7.centos.x86_64.rpm
+  - /opt/iksemel-1.4-2.el7.centos.x86_64.rpm
+  - /opt/libjpeg-turbo-1.2.90-8.el7.x86_64.rpm
+  - /opt/libX11-1.6.7-2.el7.x86_64.rpm
+  - /opt/libX11-common-1.6.7-2.el7.noarch.rpm
+  - /opt/libXau-1.0.8-2.1.el7.x86_64.rpm
+  - /opt/libxcb-1.13-1.el7.x86_64.rpm
+  - /opt/libXpm-3.5.12-1.el7.x86_64.rpm
+  - /opt/libzip-0.10.1-8.el7.x86_64.rpm
+  - /opt/mailcap-2.1.41-2.el7.noarch.rpm
+  - /opt/net-snmp-libs-5.7.2-48.el7_8.1.x86_64.rpm
+  - /opt/nettle-2.7.1-8.el7.x86_64.rpm
+  - /opt/OpenIPMI-2.0.27-1.el7.x86_64.rpm
+  - /opt/OpenIPMI-libs-2.0.27-1.el7.x86_64.rpm
+  - /opt/OpenIPMI-modalias-2.0.27-1.el7.x86_64.rpm
+  - /opt/OpenIPMI-perl-2.0.27-1.el7.x86_64.rpm
+  - /opt/php-5.4.16-48.el7.x86_64.rpm
+  - /opt/php-bcmath-5.4.16-48.el7.x86_64.rpm
+  - /opt/php-cli-5.4.16-48.el7.x86_64.rpm
+  - /opt/php-common-5.4.16-48.el7.x86_64.rpm
+  - /opt/php-gd-5.4.16-48.el7.x86_64.rpm
+  - /opt/php-ldap-5.4.16-48.el7.x86_64.rpm
+  - /opt/php-mbstring-5.4.16-48.el7.x86_64.rpm
+  - /opt/php-mysql-5.4.16-48.el7.x86_64.rpm
+  - /opt/php-pdo-5.4.16-48.el7.x86_64.rpm
+  - /opt/php-xml-5.4.16-48.el7.x86_64.rpm
+  - /opt/t1lib-5.1.2-14.el7.x86_64.rpm
+  - /opt/trousers-0.3.14-2.el7.x86_64.rpm
+  - /opt/unixODBC-2.3.1-14.el7.x86_64.rpm
+  - /opt/zabbix-agent-4.0.0-2.el7.x86_64.rpm
+  - /opt/zabbix-server-mysql-4.0.0-2.el7.x86_64.rpm
+  - /opt/zabbix-web-4.0.0-2.el7.noarch.rpm
+  - /opt/zabbix-web-mysql-4.0.0-2.el7.noarch.rpm
+
+zabbix_config_file:
+    # http 的虚拟主机配置文件，更改zabbix的时区。
+  - { src: zabbix.conf , dest: /etc/httpd/conf.d/ }
+  - { src: zabbix_server.conf , dest: /etc/zabbix/ }

@@ -1,0 +1,5 @@
+- name: started sql
+  service:
+    name: mariadb
+    state: started
+    enabled: yes

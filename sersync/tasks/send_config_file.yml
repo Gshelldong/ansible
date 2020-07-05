@@ -1,0 +1,4 @@
+- name: send sersync config file
+  template:
+    src: confxml.xml
+    dest: /usr/local/GNU-Linux-x86/confxml.xml

@@ -1,0 +1,5 @@
+---
+# tasks file for import_zabbix_data
+- include: create_database.yml
+- include: import_data.yml
+- include: create_user.yml

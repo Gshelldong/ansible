@@ -1,0 +1,25 @@
+[server default]
+manager_log=/var/log/mha/app1/manager
+manager_workdir=/var/log/mha/app1
+master_ip_failover_script=/usr/local/bin/master_ip_failover
+# master_binlog_dir=/application/mysql/data
+user=mha
+password=123
+ping_interval=2
+repl_password=123
+repl_user=rep
+ssh_user=root
+
+[server1]
+hostname=172.16.1.52
+port=3306
+
+[server2]
+candidate_master=1
+check_repl_delay=0
+hostname=172.16.1.53
+port=3306
+
+[server3]
+hostname=172.16.1.54
+port=3306

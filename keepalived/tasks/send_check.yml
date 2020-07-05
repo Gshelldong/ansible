@@ -1,0 +1,10 @@
+- name: send check nginx status scripts
+  copy:
+    src: check_web.sh
+    dest: /root/
+    mode: 0755
+
+- name: send config file for keepalived
+  template:
+    src: keepalived.conf
+    dest: /etc/keepalived/keepalived.conf

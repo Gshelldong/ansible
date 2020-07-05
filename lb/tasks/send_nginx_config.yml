@@ -1,0 +1,12 @@
+- name: send config file-copy
+  copy:
+    src: "{{ item.src }}"
+    dest: "{{ item.dest }}"
+  loop: "{{ nginx_config_file }}"
+
+- name: send config file-template
+  template:
+    src: "{{ item.src }}"
+    dest: "{{ item.dest }}"
+  loop: "{{ lb_config }}"
+  notify: Restart nginx

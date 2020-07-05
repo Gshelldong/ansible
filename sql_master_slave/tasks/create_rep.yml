@@ -1,0 +1,42 @@
+- name: Create sql_user rep
+  mysql_user:
+    login_user: root
+    login_password: "123"
+    name: "rep"
+    password: "123"
+    host: "%"
+    priv: '*.*:REPLICATION SLAVE'
+    state: present
+
+- name: Get Mysql-master Status
+  mysql_replication:
+    login_user: root
+    login_password: "123"
+    mode: getmaster
+  delegate_to: 172.16.1.51
+  register: master
+
+# 可以用来调试变量的值
+#- name: debug msg
+#  debug:
+#    msg: "{{ master['File'] }}"
+
+
+- name: Changemaster to
+  mysql_replication:
+    login_user: root
+    login_password: '123'
+    mode: changemaster
+    master_user: rep
+    master_password: '123'
+    master_host: 172.16.1.51
+    master_log_file: "{{ master['File'] }}"
+    master_log_pos: "{{ master['Position'] }}"
+  when: ( ansible_fqdn is match "db02" )
+
+- name: Start slave
+  mysql_replication:
+    login_user: root
+    login_password: '123'
+    mode: startslave
+  when: ( ansible_fqdn is match "db02" )

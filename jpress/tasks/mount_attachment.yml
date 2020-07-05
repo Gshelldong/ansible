@@ -1,0 +1,12 @@
+- name: create attachment
+  file:
+    path: /usr/share/tomcat/webapps/jpress-v3.2.5/attachment
+    recurse: yes
+    state: directory
+
+- name: mount attachment
+  mount:
+    src: 172.16.1.31:/data/jp_data
+    path: /usr/share/tomcat/webapps/jpress-v3.2.5/attachment
+    fstype: nfs
+    state: mounted

@@ -1,0 +1,11 @@
+  # 创建用于mha验证的用户，主从复制一起用在db02和db03上就会有。
+- name: Create mha auth User
+  mysql_user:
+    login_user: root
+    login_password: "123"
+    name: "mha"
+    password: "123"
+    host: "%"
+    priv: '*.*:ALL'
+    state: present
+  when: ansible_fqdn == "db01"

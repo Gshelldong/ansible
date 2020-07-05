@@ -1,0 +1,5 @@
+---
+# tasks file for php
+- include: unarchive_rpm.yml
+- include: install_php.yml
+- include: start_php.yml

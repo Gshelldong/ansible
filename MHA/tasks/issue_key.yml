@@ -1,0 +1,3 @@
+- name: Run issue key scripts
+      # 执行分发密钥的脚本
+  script: no_pass_auth.sh

@@ -1,0 +1,7 @@
+- name: install mariadb
+  yum:
+    name:
+      - mariadb-server
+      - MySQL-python
+      - perl-DBD-MySQL
+    state: present

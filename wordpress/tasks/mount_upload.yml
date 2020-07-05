@@ -1,0 +1,7 @@
+- name: mount uploads directory
+  mount:
+    path: "{{ item.path }}"
+    src: "{{ item.src }}"
+    fstype: nfs
+    state: mounted
+  loop: "{{ mounted }}"

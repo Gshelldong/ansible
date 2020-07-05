@@ -1,0 +1,11 @@
+- name: sync time form ntp_server
+  shell: ntpdate 172.16.1.61
+  when: ansible_fqdn != "m01"
+
+- name: add cron sync time
+  cron:
+    name: "Sync time from 172.16.1.61 at 00:00"
+    minute: "0"
+    hour: "0"
+    job: "ntpdate 172.16.1.61 &> /dev/null"
+  when: ansible_fqdn != "m01"

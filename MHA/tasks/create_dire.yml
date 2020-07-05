@@ -1,0 +1,9 @@
+- name: Create Directory
+  file:
+    path: "{{ item }}"
+    recurse: yes
+    state: directory
+  with_items:
+    - /etc/mha
+    - /var/log/mha/app1
+  when: ansible_fqdn == "db03"

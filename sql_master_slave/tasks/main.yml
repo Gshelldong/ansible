@@ -1,0 +1,4 @@
+---
+# tasks file for sql_master_slave
+- include: send_config_file.yml
+- include: create_rep.yml

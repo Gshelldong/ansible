@@ -1,0 +1,4 @@
+- name: Uncarchive Php Rpm
+  unarchive:
+    src: nginx_and_php.tar.gz
+    dest: /tmp/

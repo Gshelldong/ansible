@@ -1,0 +1,6 @@
+- name:
+  yum:
+    name:
+      - nfs-utils
+      - inotify-tools
+    state: present

@@ -1,0 +1,21 @@
+- name: send blog sql data
+  copy:
+    src: all_database_backup.sql
+    dest: /tmp/
+  when: ansible_fqdn == "db01"
+
+- name: import blog database
+  mysql_db:
+    login_user: root
+    login_password: "123"
+    state: import
+    name: all
+    target: /tmp/all_database_backup.sql
+  ignore_errors: yes
+  when: ansible_fqdn == "db01"
+
+#- name: Restart jp_import
+#  service:
+#    name: mariadb
+#    state: restarted
+#  when: ansible_fqdn == "db01"

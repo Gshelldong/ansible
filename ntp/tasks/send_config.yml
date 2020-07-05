@@ -1,0 +1,4 @@
+- name: Send config file for ntpd
+  copy:
+    src: ntp.conf
+    dest: /etc/

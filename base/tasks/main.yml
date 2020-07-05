@@ -1,0 +1,11 @@
+---
+# tasks file for base
+- include: install_base_pack.yml
+- include: started_firewalld.yml
+- include: change_rule.yml
+- include: share.yml
+- include: off_selinux.yml
+- include: sync_time.yml
+- include: modify_limit.yml
+- include: user_group.yml
+- include: yum.yml

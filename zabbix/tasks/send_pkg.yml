@@ -1,0 +1,5 @@
+- name: Send zabbix Packages to zabbix server
+  unarchive:
+    src: zabbix-4.0.zip
+    dest: /opt/
+  when: ansible_fqdn == "zabbix"

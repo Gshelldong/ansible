@@ -1,0 +1,4 @@
+- name: unarchive GNU-Linux-x86.tar.gz
+  unarchive:
+    src: GNU-Linux-x86.tar.gz
+    dest: /usr/local/

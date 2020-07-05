@@ -1,0 +1,30 @@
+---
+# vars file for base
+user_group: "www"
+uid_gid: "666"
+
+packages_list:
+  - net-tools
+  - vim
+  - tree
+  - htop
+  - iftop
+  - gcc
+  - gcc-c++
+  - glibc
+  - iotop
+  - lrzsz
+  - sl
+  - wget
+  - unzip
+  - telnet
+  - nmap
+  - nc
+  - psmisc
+  - dos2unix
+  - bash-completion
+  - sysstat
+  - rsync
+  - nfs-utils
+  - httpd-tools
+  - ntpdate

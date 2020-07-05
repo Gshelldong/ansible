@@ -1,0 +1,5 @@
+- name: mod tomcat to www
+  user:
+    name: tomcat
+    groups: www
+    state: present

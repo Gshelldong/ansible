@@ -1,0 +1,4 @@
+- name: start keepalived service
+  service:
+    name: keepalived
+    state: started

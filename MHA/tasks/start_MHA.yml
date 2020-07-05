@@ -1,0 +1,7 @@
+- name: Config vip
+  script: config_vip.sh
+  when: ansible_fqdn == "db01"
+
+- name: Start MHA
+  script: start_MHA.sh
+  when: ansible_fqdn == "db03"

@@ -1,0 +1,4 @@
+- name: install mha4mysql-node-0.56-0.el6.noarch.rpm
+  yum:
+    name: /opt/mha4mysql-node-0.56-0.el6.noarch.rpm
+    state: present

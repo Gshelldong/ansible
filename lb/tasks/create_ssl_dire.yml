@@ -1,0 +1,4 @@
+- name: Create ssl Directory
+  file:
+    path: /etc/nginx/ssl
+    state: directory

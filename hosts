@@ -1,0 +1,28 @@
+[web_group]
+web01 ansible_ssh_host=172.16.1.7
+web02 ansible_ssh_host=172.16.1.8
+web03 ansible_ssh_host=172.16.1.9
+
+[manager]
+m01 ansible_ssh_host=172.16.1.61
+
+[backup_group]
+backup ansible_ssh_host=172.16.1.41
+
+[nfs_group]
+nfs ansible_ssh_host=172.16.1.31
+
+[db_group]
+db01 ansible_ssh_host=172.16.1.52
+db02 ansible_ssh_host=172.16.1.53
+db03 ansible_ssh_host=172.16.1.54
+# db_master ansible_ssh_host=172.16.1.51
+
+[lb_group]
+lb01 ansible_ssh_host=172.16.1.5
+lb02 ansible_ssh_host=172.16.1.6
+
+[zabbix_group]
+zabbix ansible_ssh_host=172.16.1.101
+
+

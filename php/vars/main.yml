@@ -1,0 +1,22 @@
+---
+# vars file for php
+php_rpm_list:
+  - /tmp/nginx_php/mod_php71w-7.1.33-1.w7.x86_64.rpm
+  - /tmp/nginx_php/php71w-cli-7.1.33-1.w7.x86_64.rpm
+  - /tmp/nginx_php/php71w-common-7.1.33-1.w7.x86_64.rpm
+  - /tmp/nginx_php/php71w-devel-7.1.33-1.w7.x86_64.rpm
+  - /tmp/nginx_php/php71w-embedded-7.1.33-1.w7.x86_64.rpm
+  - /tmp/nginx_php/php71w-fpm-7.1.33-1.w7.x86_64.rpm
+  - /tmp/nginx_php/php71w-gd-7.1.33-1.w7.x86_64.rpm
+  - /tmp/nginx_php/php71w-mbstring-7.1.33-1.w7.x86_64.rpm
+  - /tmp/nginx_php/php71w-mcrypt-7.1.33-1.w7.x86_64.rpm
+  - /tmp/nginx_php/php71w-mysqlnd-7.1.33-1.w7.x86_64.rpm
+  - /tmp/nginx_php/php71w-opcache-7.1.33-1.w7.x86_64.rpm
+  - /tmp/nginx_php/php71w-pdo-7.1.33-1.w7.x86_64.rpm
+  - /tmp/nginx_php/php71w-pear-1.10.4-1.w7.noarch.rpm
+  - /tmp/nginx_php/php71w-pecl-igbinary-2.0.5-1.w7.x86_64.rpm
+  - /tmp/nginx_php/php71w-pecl-memcached-3.0.4-1.w7.x86_64.rpm
+  - /tmp/nginx_php/php71w-pecl-mongodb-1.5.3-1.w7.x86_64.rpm
+  - /tmp/nginx_php/php71w-pecl-redis-3.1.6-1.w7.x86_64.rpm
+  - /tmp/nginx_php/php71w-process-7.1.33-1.w7.x86_64.rpm
+  - /tmp/nginx_php/php71w-xml-7.1.33-1.w7.x86_64.rpm

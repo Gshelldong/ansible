@@ -1,0 +1,9 @@
+---
+# handlers file for wordpress
+- name: Restart nginx_php Server
+  service:
+    name: "{{ item }}"
+    state: reloaded
+  with_items:
+    - nginx
+    - php-fpm

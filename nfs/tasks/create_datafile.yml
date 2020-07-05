@@ -1,0 +1,7 @@
+- name: create nfs data directory
+  file:
+    path: "{{ item }}"
+    owner: "{{ str_www }}"
+    group: "{{ str_www }}"
+    state: directory
+  loop: "{{ nfs_dire }}"

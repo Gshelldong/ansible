@@ -1,0 +1,6 @@
+---
+# handlers file for lb
+- name: Restart nginx
+  service:
+    name: nginx
+    state: restarted

@@ -1,0 +1,7 @@
+---
+# tasks file for zabbix
+- include: send_pkg.yml
+- include: install_zabbix.yml
+- include: install_agent.yml
+- include: send_config.yml
+- include: start_zabbix.yml

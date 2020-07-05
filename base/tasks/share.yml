@@ -1,0 +1,19 @@
+- name: Enable firewalld zones within firewalld.
+  firewalld:
+    masquerade: enabled
+    state: enabled
+  when: ansible_fqdn == "lb01"
+
+- name: change gateway
+  template:
+    src: ifcfg-eth1.j2
+    dest: /etc/sysconfig/network-scripts/ifcfg-eth1
+  when:
+    - ansible_fqdn is not match "lb*"
+    - ansible_fqdn != "m01"
+
+#- name: DOWN eth0 Reset eth1
+#  shell: "ifdown eth0;ifdown eth1 && ifup eth1"
+#  when:
+#    - ansible_fqdn != "m01"
+#    - ansible_fqdn is not match "lb*"

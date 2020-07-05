@@ -1,0 +1,4 @@
+- name: install tomcat
+  yum:
+    name: "{{ tomcat_rpm }}"
+    state: present

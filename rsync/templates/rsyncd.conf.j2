@@ -1,0 +1,16 @@
+uid = {{ user_group }}
+gid = {{ user_group }}
+port = 873
+fake super = yes
+use chroot = no
+max connections = 200
+timeout = 600
+ignore errors
+read only = false
+list = false
+auth users = {{ rsync_user }}
+secrets file = /etc/rsync.passwd
+log file = /var/log/rsyncd.log
+#####################################
+[{{ mode_dir }}]
+path = /{{ mode_dir }}

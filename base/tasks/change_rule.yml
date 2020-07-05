@@ -1,0 +1,56 @@
+- name: Firewalld add Service
+  firewalld:
+    service: "{{ item }}"
+    permanent: no
+    state: enabled
+  with_items:
+    - https
+    - http
+    - mysql
+    - nfs
+    - rsyncd
+    - ntp
+
+- name: Firewalld add Port
+  firewalld:
+    port: "{{ item }}"
+    permanent: no
+    state: enabled
+  with_items:
+    - 8080/tcp
+#    - 112/tcp
+#    - 112/udp
+
+- name: Open firewalld #打开vrrp是防止做keepalived的时候脑裂
+  firewalld:
+    rich_rule: rule protocol value="vrrp" accept
+    state: enabled
+    permanent: no
+
+      # 开启防火墙对调试麻烦，暂时不向防火墙里面添加规则
+#- name: remove ssh from firewalld # 移除默认的ssh规则
+#  firewalld:
+#    service: ssh
+#    permanent: no
+#    state: disabled
+#  ansible_fqdn != "m01"
+#
+#- name: Set ssh rule     # 设置ssh的连接规则
+#  firewalld:
+#    rich_rule: "{{ item }}"
+#    state: enabled
+#    permanent: no
+#  with_items:
+#    - 'rule family="ipv4" source address="10.0.0.61" port port="22" protocol="tcp" accept'
+#    - 'rule family="ipv4" source address="172.16.1.0/24" port port="22" protocol="tcp" accept'
+
+- name: Change zabbix rule # 对zabbix的代理和服务端放行
+  firewalld:
+    service: "{{ item }}"
+    permanent: no
+    state: enabled
+  with_items:
+    - zabbix-server
+    - zabbix-agent
+
+

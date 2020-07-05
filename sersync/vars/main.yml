@@ -1,0 +1,6 @@
+---
+# vars file for sersync
+inotify_dir: "/data"
+rsync_mode: backup
+auth_user: rsync_backup
+auth_password: "123"

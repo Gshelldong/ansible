@@ -1,0 +1,15 @@
+---
+# tasks file for MHA
+- include: send_config_file.yml
+- include: binlog_auth.yml
+- include: start_master_slave.yml
+- include: send_mha_rpm.yml
+- include: install_node.yml
+- include: create_mha_user.yml
+  # 开始部署管理节点
+- include: install_enai.yml
+- include: install_manager.yml
+- include: create_dire.yml
+- include: send_manager_config.yml
+- include: issue_key.yml
+- include: start_MHA.yml

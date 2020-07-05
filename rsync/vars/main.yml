@@ -1,0 +1,6 @@
+---
+# vars file for rsync
+user_group: www
+rsync_user: rsync_backup
+mode_dir: backup
+rsync_pass: "123"

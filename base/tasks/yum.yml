@@ -1,0 +1,7 @@
+- name: Push YUM Repo File
+  copy:
+    src: "{{ item.src }}"
+    dest: "{{ item.dest }}"
+  with_items:
+    - { src: 'CentOS-Base.repo',dest: '/etc/yum.repos.d/CentOS-Base.repo' }
+    - { src: 'epel.repo',dest: '/etc/yum.repos.d/epel.repo' }

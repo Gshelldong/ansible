@@ -1,0 +1,12 @@
+- name: create database user zh and wp
+  mysql_user:
+    login_user: root
+    login_password: "123"
+    name: "{{ item.name }}"
+    password: "{{ item.password }}"
+    host: "%"
+    priv: '*.*:ALL'
+    state: present
+  loop: "{{ user_pass }}"
+
+

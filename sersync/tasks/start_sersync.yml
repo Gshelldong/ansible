@@ -1,0 +1,3 @@
+- name: Start sersync
+  shell: /usr/local/GNU-Linux-x86/sersync2 -rdo /usr/local/GNU-Linux-x86/confxml.xml
+  notify: Sersync

@@ -1,0 +1,11 @@
+---
+# tasks file for wordpress
+- include: send_config_file.yml
+- include: create_website.yml
+- include: create_upload.yml
+- include: mount_upload.yml
+
+- include: send_code_pkg.yml
+- include: unarchive_pkg.yml
+
+# - include: unarchive_code.yml

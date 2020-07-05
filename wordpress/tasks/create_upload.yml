@@ -1,0 +1,9 @@
+- name: create uploads
+  file:
+    path: "{{ item }}"
+    owner: "{{ str_www }}"
+    group: "{{ str_www }}"
+    mode: 0755
+    recurse: yes
+    state: directory
+  loop: "{{ uploads_dire }}"

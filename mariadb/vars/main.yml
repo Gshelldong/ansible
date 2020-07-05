@@ -1,0 +1,5 @@
+---
+# vars file for mariadb
+user_pass:
+  - { name: "wp",password: "123" }
+  - { name: "zh",password: "123" }

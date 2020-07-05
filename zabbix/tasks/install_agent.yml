@@ -1,0 +1,9 @@
+- name: send zabbix-agent rpm
+  copy:
+    src: zabbix-agent-4.0.0-2.el7.x86_64.rpm
+    dest: /opt/
+
+- name: Install zabbix agent
+  yum:
+    name: /opt/zabbix-agent-4.0.0-2.el7.x86_64.rpm
+    state: present

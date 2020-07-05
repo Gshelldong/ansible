@@ -1,0 +1,4 @@
+---
+# tasks file for lb
+- include: create_ssl_dire.yml
+- include: send_nginx_config.yml

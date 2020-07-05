@@ -1,0 +1,21 @@
+- name: send jp sql data
+  copy:
+    src: backup-jp_all_databases.sql
+    dest: /tmp/
+  when: ansible_fqdn == "db01"
+
+- name: import jpress database
+  mysql_db:
+    login_user: root
+    login_password: "123"
+    state: import
+    name: all
+    target: /tmp/backup-jp_all_databases.sql
+  ignore_errors: yes
+  when: ansible_fqdn == "db01"
+
+- name: Restart jp_import
+  service:
+    name: mariadb
+    state: restarted
+  when: ansible_fqdn == "db01"

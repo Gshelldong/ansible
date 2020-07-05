@@ -1,0 +1,8 @@
+---
+# tasks file for mariadb
+# 先构建MHA在导入数据库，都从master导入
+- include: install_mariadb.yml
+- include: started_mariadb.yml
+# - include: import_data.yml
+- include: set_root.yml
+# - include: create_user.yml

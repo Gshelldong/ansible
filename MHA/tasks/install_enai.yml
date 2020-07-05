@@ -1,0 +1,12 @@
+- name: install enai for node
+  yum:
+    name: "{{ packargs_enai }}"
+    state: present
+  vars:
+    packargs_enai:
+      - perl-Config-Tiny
+      - epel-release
+      - perl-Log-Dispatch
+      - perl-Parallel-ForkManager
+      - perl-Time-HiRes
+  when: ansible_fqdn == "db03"

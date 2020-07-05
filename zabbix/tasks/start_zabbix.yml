@@ -1,0 +1,13 @@
+- name: Start zabbix Server and httpd
+  service:
+    name: "{{ item }}"
+    state: started
+  with_items:
+      - zabbix-server
+      - httpd
+  when: ansible_fqdn == "zabbix"
+
+- name: Start zabbix-agent
+  service:
+    name: zabbix-agent
+    state: started

@@ -1,0 +1,4 @@
+---
+# tasks file for whole_backup
+- include: send_backup_script.yml
+- include: backup_crontab.yml

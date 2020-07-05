@@ -1,0 +1,15 @@
+- name: Send Manager config
+  copy:
+    src: "{{ item.src }}"
+    dest: "{{ item.dest }}"
+  with_items:
+        # 发送mha的配置文件
+    - { src: app1.cnf , dest: /etc/mha/ }
+  when: ansible_fqdn == "db03"
+
+- name: 管理虚拟IP飘移的文件
+  copy:
+        # 管理虚拟IP飘移的文件
+    src: master_ip_failover
+    dest: /usr/local/bin/
+    mode: 0755

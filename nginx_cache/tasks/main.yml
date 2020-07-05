@@ -1,0 +1,4 @@
+---
+# tasks file for nginx_cache
+- include: send_config.yml
+- include: mkdir_cache.yml

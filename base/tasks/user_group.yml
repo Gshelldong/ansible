@@ -1,0 +1,14 @@
+- name: create www group
+  group:
+    name: "{{ user_group }}"
+    gid: "{{ uid_gid }}"
+    state: present
+
+- name: Create "{{ user_group }}" user
+  user:
+    name: "{{ user_group }}"
+    uid: "{{ uid_gid }}"
+    group: "{{ user_group }}"
+    shell: /sbin/nologin
+    create_home: false
+    state: present

@@ -1,0 +1,3 @@
+---
+# tasks file for import_jb_database
+- include: import_data.yml

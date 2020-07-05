@@ -1,0 +1,10 @@
+- name: Install Base Pckages
+  yum:
+    name: "{{ packages_list }}"
+    state: present
+
+- name: Install MySQL-python
+  yum:
+    name: MySQL-python
+    state: present
+  when: ansible_fqdn is match "db*"

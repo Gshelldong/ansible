@@ -1,0 +1,12 @@
+---
+# vars file for nfs
+zh_dir: zh_data
+wp_dir: wp_data
+jp_dir: jp_data
+
+str_666: "666"
+str_www: www
+nfs_dire:
+  - /data/wp_data
+  - /data/zh_data
+  - /data/jp_data
