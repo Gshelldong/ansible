@@ -1,4 +1,4 @@
-# ansible-LNMP
+# ansible-一键完成LNMP架构
 
 <br> 
 
