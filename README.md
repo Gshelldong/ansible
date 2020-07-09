@@ -4,11 +4,11 @@
 
 ## 网站架构图
 
-
+![image-20200703201358432](https://files.cnblogs.com/files/gshelldon/image-20200703201358432.bmp)
 
 ## ansible一键完成lnmp架构
 
-ansible一键完成整个lnmp架构部署，减少运维部署的工作量，集群架构优化，解决共享存储单点故障问题，网站数据定时备份，MHA数据库高可用，nginx负载均衡本地缓存，共享存储。
+ansible一键完成整个lnmp架构部署，减少运维部署的工作量，集群架构优化，解决共享存储单点故障问题，网站数据定时备份，MHA数据库高可用，nginx负载均衡本地缓存，https加密访问，keepalived+nginx高可用。
 
 <br>
 
@@ -34,4 +34,49 @@ ansible一键完成整个lnmp架构部署，减少运维部署的工作量，集
 | jenkins  | 10.0.0.102 | 172.16.1.102 | 代码发布服务器                 |
 | gitlab   | 10.0.0.102 | 172.16.1.102 | 开发使用的，内网的代码仓库     |
 
-<p style="color:red">注:</p>
+注：jenkins和gitlab没有在ansible剧本当中，注意基础优化防火墙中的策略配置问题，会导致ssh连接补上。
+
+<br>
+
+## 基础优化部署：
+
+1. ntp时间同步
+2. firewalld 内网安全优化
+3. 基础环境安装包
+4. 统一操作权限用户`www`
+
+## 基础架构：
+
+- wordpress
+
+  LNMP 架构
+
+- wecenter
+
+  LNMP 架构
+
+- jpress
+
+  LNMT 架构
+
+1. 以架构为中心
+2. 数据库分离
+3. 共享存储
+4. 负载均衡
+5. 高可用
+
+## 架构优化项目：
+
+1. https加密访问网站
+2. keepalived + nginx
+3. MHA数据库高可用
+4. nfs实时备份
+5. nginx本地缓存
+
+## 自动化运维：
+
+1. gitlab + jenkins
+2. zabbix
+3. jumpserver
+4. m01
+
